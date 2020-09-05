@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "39DE225C25009FBB0022FBB3"
-               BuildableName = "LightCalculator+.app"
-               BlueprintName = "LightCalculator+"
-               ReferencedContainer = "container:LightCalculator+.xcodeproj">
+               BuildableName = "LightCalculatorPlus.app"
+               BlueprintName = "LightCalculatorPlus"
+               ReferencedContainer = "container:LightCalculatorPlus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "39536D992500A21800855091"
-               BuildableName = "LightCalculator+Tests.xctest"
-               BlueprintName = "LightCalculator+Tests"
-               ReferencedContainer = "container:LightCalculator+.xcodeproj">
+               BuildableName = "LightCalculatorPlusTests.xctest"
+               BlueprintName = "LightCalculatorPlusTests"
+               ReferencedContainer = "container:LightCalculatorPlus.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "39E7BCC52500A647002426AB"
-               BuildableName = "LightCalculator+UITests.xctest"
-               BlueprintName = "LightCalculator+UITests"
-               ReferencedContainer = "container:LightCalculator+.xcodeproj">
+               BuildableName = "LightCalculatorPlusUITests.xctest"
+               BlueprintName = "LightCalculatorPlusUITests"
+               ReferencedContainer = "container:LightCalculatorPlus.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39DE225C25009FBB0022FBB3"
-            BuildableName = "LightCalculator+.app"
-            BlueprintName = "LightCalculator+"
-            ReferencedContainer = "container:LightCalculator+.xcodeproj">
+            BuildableName = "LightCalculatorPlus.app"
+            BlueprintName = "LightCalculatorPlus"
+            ReferencedContainer = "container:LightCalculatorPlus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39DE225C25009FBB0022FBB3"
-            BuildableName = "LightCalculator+.app"
-            BlueprintName = "LightCalculator+"
-            ReferencedContainer = "container:LightCalculator+.xcodeproj">
+            BuildableName = "LightCalculatorPlus.app"
+            BlueprintName = "LightCalculatorPlus"
+            ReferencedContainer = "container:LightCalculatorPlus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
