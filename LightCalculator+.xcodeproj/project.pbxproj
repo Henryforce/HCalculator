@@ -46,10 +46,10 @@
 		39536D8F2500A0B700855091 /* HButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButtonStyle.swift; sourceTree = "<group>"; };
 		39536D922500A0E600855091 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		39536D942500A0FF00855091 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		39536D9A2500A21800855091 /* HCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39536D9A2500A21800855091 /* LightCalculator+Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LightCalculator+Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39536D9C2500A21800855091 /* HCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCalculatorTests.swift; sourceTree = "<group>"; };
 		39536D9E2500A21800855091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39DE225D25009FBB0022FBB3 /* HCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39DE225D25009FBB0022FBB3 /* LightCalculator+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LightCalculator+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DE226025009FBB0022FBB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39DE226225009FBB0022FBB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		39DE226425009FBB0022FBB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		39DE226925009FBC0022FBB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		39DE226C25009FBC0022FBB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39DE226E25009FBC0022FBB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39E7BCC62500A647002426AB /* HCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		39E7BCC62500A647002426AB /* LightCalculator+UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LightCalculator+UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E7BCC82500A647002426AB /* HCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCalculatorUITests.swift; sourceTree = "<group>"; };
 		39E7BCCA2500A647002426AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,9 +129,9 @@
 		39DE225E25009FBB0022FBB3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39DE225D25009FBB0022FBB3 /* HCalculator.app */,
-				39536D9A2500A21800855091 /* HCalculatorTests.xctest */,
-				39E7BCC62500A647002426AB /* HCalculatorUITests.xctest */,
+				39DE225D25009FBB0022FBB3 /* LightCalculator+.app */,
+				39536D9A2500A21800855091 /* LightCalculator+Tests.xctest */,
+				39E7BCC62500A647002426AB /* LightCalculator+UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,9 +172,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		39536D992500A21800855091 /* HCalculatorTests */ = {
+		39536D992500A21800855091 /* LightCalculator+Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39536DA12500A21800855091 /* Build configuration list for PBXNativeTarget "HCalculatorTests" */;
+			buildConfigurationList = 39536DA12500A21800855091 /* Build configuration list for PBXNativeTarget "LightCalculator+Tests" */;
 			buildPhases = (
 				39536D962500A21800855091 /* Sources */,
 				39536D972500A21800855091 /* Frameworks */,
@@ -185,14 +185,14 @@
 			dependencies = (
 				39536DA02500A21800855091 /* PBXTargetDependency */,
 			);
-			name = HCalculatorTests;
+			name = "LightCalculator+Tests";
 			productName = HCalculatorTests;
-			productReference = 39536D9A2500A21800855091 /* HCalculatorTests.xctest */;
+			productReference = 39536D9A2500A21800855091 /* LightCalculator+Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		39DE225C25009FBB0022FBB3 /* HCalculator */ = {
+		39DE225C25009FBB0022FBB3 /* LightCalculator+ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39DE228725009FBD0022FBB3 /* Build configuration list for PBXNativeTarget "HCalculator" */;
+			buildConfigurationList = 39DE228725009FBD0022FBB3 /* Build configuration list for PBXNativeTarget "LightCalculator+" */;
 			buildPhases = (
 				39DE225925009FBB0022FBB3 /* Sources */,
 				39DE225A25009FBB0022FBB3 /* Frameworks */,
@@ -202,14 +202,14 @@
 			);
 			dependencies = (
 			);
-			name = HCalculator;
+			name = "LightCalculator+";
 			productName = HCalculator;
-			productReference = 39DE225D25009FBB0022FBB3 /* HCalculator.app */;
+			productReference = 39DE225D25009FBB0022FBB3 /* LightCalculator+.app */;
 			productType = "com.apple.product-type.application";
 		};
-		39E7BCC52500A647002426AB /* HCalculatorUITests */ = {
+		39E7BCC52500A647002426AB /* LightCalculator+UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 39E7BCCF2500A647002426AB /* Build configuration list for PBXNativeTarget "HCalculatorUITests" */;
+			buildConfigurationList = 39E7BCCF2500A647002426AB /* Build configuration list for PBXNativeTarget "LightCalculator+UITests" */;
 			buildPhases = (
 				39E7BCC22500A647002426AB /* Sources */,
 				39E7BCC32500A647002426AB /* Frameworks */,
@@ -220,9 +220,9 @@
 			dependencies = (
 				39E7BCCC2500A647002426AB /* PBXTargetDependency */,
 			);
-			name = HCalculatorUITests;
+			name = "LightCalculator+UITests";
 			productName = HCalculatorUITests;
-			productReference = 39E7BCC62500A647002426AB /* HCalculatorUITests.xctest */;
+			productReference = 39E7BCC62500A647002426AB /* LightCalculator+UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +248,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 39DE225825009FBB0022FBB3 /* Build configuration list for PBXProject "HCalculator" */;
+			buildConfigurationList = 39DE225825009FBB0022FBB3 /* Build configuration list for PBXProject "LightCalculator+" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -261,9 +261,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				39DE225C25009FBB0022FBB3 /* HCalculator */,
-				39536D992500A21800855091 /* HCalculatorTests */,
-				39E7BCC52500A647002426AB /* HCalculatorUITests */,
+				39DE225C25009FBB0022FBB3 /* LightCalculator+ */,
+				39536D992500A21800855091 /* LightCalculator+Tests */,
+				39E7BCC52500A647002426AB /* LightCalculator+UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -332,12 +332,12 @@
 /* Begin PBXTargetDependency section */
 		39536DA02500A21800855091 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 39DE225C25009FBB0022FBB3 /* HCalculator */;
+			target = 39DE225C25009FBB0022FBB3 /* LightCalculator+ */;
 			targetProxy = 39536D9F2500A21800855091 /* PBXContainerItemProxy */;
 		};
 		39E7BCCC2500A647002426AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 39DE225C25009FBB0022FBB3 /* HCalculator */;
+			target = 39DE225C25009FBB0022FBB3 /* LightCalculator+ */;
 			targetProxy = 39E7BCCB2500A647002426AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -371,7 +371,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCalculator.app/HCalculator";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightCalculator+.app/LightCalculator+";
 			};
 			name = Debug;
 		};
@@ -392,7 +392,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HCalculator.app/HCalculator";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightCalculator+.app/LightCalculator+";
 			};
 			name = Release;
 		};
@@ -516,6 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HCalculator/HCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"HCalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = LY87V7AVCG;
 				ENABLE_PREVIEWS = YES;
@@ -524,6 +525,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.BasicCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -538,6 +540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HCalculator/HCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"HCalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = LY87V7AVCG;
 				ENABLE_PREVIEWS = YES;
@@ -546,6 +549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.BasicCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -568,9 +572,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.HCalculatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HCalculator;
+				TEST_TARGET_NAME = "LightCalculator+";
 			};
 			name = Debug;
 		};
@@ -588,16 +593,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.HCalculatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = HCalculator;
+				TEST_TARGET_NAME = "LightCalculator+";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		39536DA12500A21800855091 /* Build configuration list for PBXNativeTarget "HCalculatorTests" */ = {
+		39536DA12500A21800855091 /* Build configuration list for PBXNativeTarget "LightCalculator+Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39536DA22500A21800855091 /* Debug */,
@@ -606,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39DE225825009FBB0022FBB3 /* Build configuration list for PBXProject "HCalculator" */ = {
+		39DE225825009FBB0022FBB3 /* Build configuration list for PBXProject "LightCalculator+" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39DE228525009FBD0022FBB3 /* Debug */,
@@ -615,7 +621,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39DE228725009FBD0022FBB3 /* Build configuration list for PBXNativeTarget "HCalculator" */ = {
+		39DE228725009FBD0022FBB3 /* Build configuration list for PBXNativeTarget "LightCalculator+" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39DE228825009FBD0022FBB3 /* Debug */,
@@ -624,7 +630,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		39E7BCCF2500A647002426AB /* Build configuration list for PBXNativeTarget "HCalculatorUITests" */ = {
+		39E7BCCF2500A647002426AB /* Build configuration list for PBXNativeTarget "LightCalculator+UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39E7BCCD2500A647002426AB /* Debug */,

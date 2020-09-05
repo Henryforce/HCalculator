@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "39DE225C25009FBB0022FBB3"
-               BuildableName = "HCalculator.app"
-               BlueprintName = "HCalculator"
-               ReferencedContainer = "container:HCalculator.xcodeproj">
+               BuildableName = "LightCalculator+.app"
+               BlueprintName = "LightCalculator+"
+               ReferencedContainer = "container:LightCalculator+.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "39536D992500A21800855091"
-               BuildableName = "HCalculatorTests.xctest"
-               BlueprintName = "HCalculatorTests"
-               ReferencedContainer = "container:HCalculator.xcodeproj">
+               BuildableName = "LightCalculator+Tests.xctest"
+               BlueprintName = "LightCalculator+Tests"
+               ReferencedContainer = "container:LightCalculator+.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "39E7BCC52500A647002426AB"
-               BuildableName = "HCalculatorUITests.xctest"
-               BlueprintName = "HCalculatorUITests"
-               ReferencedContainer = "container:HCalculator.xcodeproj">
+               BuildableName = "LightCalculator+UITests.xctest"
+               BlueprintName = "LightCalculator+UITests"
+               ReferencedContainer = "container:LightCalculator+.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39DE225C25009FBB0022FBB3"
-            BuildableName = "HCalculator.app"
-            BlueprintName = "HCalculator"
-            ReferencedContainer = "container:HCalculator.xcodeproj">
+            BuildableName = "LightCalculator+.app"
+            BlueprintName = "LightCalculator+"
+            ReferencedContainer = "container:LightCalculator+.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "39DE225C25009FBB0022FBB3"
-            BuildableName = "HCalculator.app"
-            BlueprintName = "HCalculator"
-            ReferencedContainer = "container:HCalculator.xcodeproj">
+            BuildableName = "LightCalculator+.app"
+            BlueprintName = "LightCalculator+"
+            ReferencedContainer = "container:LightCalculator+.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

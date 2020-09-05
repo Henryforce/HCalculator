@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:HCalculator.xcodeproj">
+      location = "self:/Users/henryforce/Developer/Gits-Github/HCalculator/LightCalculator+.xcodeproj">
    </FileRef>
 </Workspace>
