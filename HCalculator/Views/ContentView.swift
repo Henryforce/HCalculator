@@ -19,8 +19,8 @@ struct ContentView: View {
             VStack(alignment: .trailing) {
                 
                 Text(self.viewModel.calculationResult)
-                    .fontWeight(.bold)
                     .font(.largeTitle)
+                    .fontWeight(.heavy)
                     .foregroundColor(Color.HBlue)
                     .frame(minHeight: geometry.size.height * Constants.textHeight)
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
@@ -52,6 +52,7 @@ struct ContentView: View {
                         self.viewModel.divisionWasPressed()
                     }, label: {
                         Text("/")
+                            .font(.title)
                             .fontWeight(.medium)
                     })
                     .buttonStyle(self.viewModel.divisionButtonStyle)
@@ -79,6 +80,7 @@ struct ContentView: View {
                         self.viewModel.multiplyWasPressed()
                     }, label: {
                         Text("X")
+                            .font(.title)
                             .fontWeight(.medium)
                     })
                     .buttonStyle(self.viewModel.multiplyButtonStyle)
@@ -106,6 +108,7 @@ struct ContentView: View {
                         self.viewModel.minusWasPressed()
                     }, label: {
                         Text("-")
+                            .font(.title)
                             .fontWeight(.medium)
                     })
                     .buttonStyle(self.viewModel.minusButtonStyle)
@@ -133,6 +136,7 @@ struct ContentView: View {
                         self.viewModel.plusWasPressed()
                     }, label: {
                         Text("+")
+                            .font(.title)
                             .fontWeight(.medium)
                     })
                     .buttonStyle(self.viewModel.plusButtonStyle)

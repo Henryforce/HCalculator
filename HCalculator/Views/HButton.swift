@@ -16,7 +16,8 @@ struct HButton: View {
     
     var body: some View {
         Text(title)
-            .fontWeight(.medium)
+            .font(.title)
+            .fontWeight(.regular)
             .foregroundColor(titleColor)
             .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
             .background(backgroundColor)

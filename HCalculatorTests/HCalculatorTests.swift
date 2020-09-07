@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import HCalculator
+@testable import LightCalculatorPlus
 
 class HCalculatorTests: XCTestCase {
 
