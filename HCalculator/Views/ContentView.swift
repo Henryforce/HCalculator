@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View, KeyInput {
     
+    @EnvironmentObject var state: AppState
     @ObservedObject var viewModel = ContentViewModel()
     
     var body: some View {
@@ -25,6 +26,9 @@ struct ContentView: View {
                     .frame(minHeight: geometry.size.height * Constants.textHeight)
                     .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
                     .accessibility(identifier: "Result")
+                    .onAppear {
+                        self.state.delegate = self
+                    }
                 
                 HStack(spacing: 10) {
                     Button(action: {
@@ -172,10 +176,14 @@ struct ContentView: View {
         }
         
     }
+    
+    func onKeyPress(_ key: String) {
+        viewModel.keyWasPressed(key: key)
+    }
 }
 
 fileprivate struct Constants {
-    static let textHeight: CGFloat = 0.28
+    static let textHeight: CGFloat = 0.21
     static let rowHeight: CGFloat = 0.11
 }
 

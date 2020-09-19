@@ -32,6 +32,29 @@ final class ContentViewModel: ObservableObject {
     
     // Mark: ContentViewModel
     
+    func keyWasPressed(key: String) {
+        switch(key) {
+        case "0": zeroWasPressed()
+        case "1": oneWasPressed()
+        case "2": twoWasPressed()
+        case "3": threeWasPressed()
+        case "4": fourWasPressed()
+        case "5": fiveWasPressed()
+        case "6": sixWasPressed()
+        case "7": sevenWasPressed()
+        case "8": eightWasPressed()
+        case "9": nineWasPressed()
+        case "+": plusWasPressed()
+        case "-": minusWasPressed()
+        case "/": divisionWasPressed()
+        case "*": plusWasPressed()
+        case ".": pointWasPressed()
+        case "=", "\r", "\u{3}": equalWasPressed()
+        case "\u{8}": deleteWasPressed()
+        default: break
+        }
+    }
+    
     func zeroWasPressed() {
         addNumberString(number: "0")
     }

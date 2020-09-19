@@ -9,7 +9,7 @@
 import XCTest
 @testable import LightCalculatorPlus
 
-class HCalculatorTests: XCTestCase {
+final class HCalculatorTests: XCTestCase {
 
     var sut: ContentViewModel!
     
@@ -41,6 +41,19 @@ class HCalculatorTests: XCTestCase {
         
         // Then
         XCTAssertEqual(sut.calculationResult, "123456789")
+    }
+    
+    func testPressingKeysAppendsNumbersOnResultValue() throws {
+        // Given
+        let keys = ["1", "2", "3", "4", "5", "+", "6", "-", "7", "/", "8", "*", "9", ".", "0", "=", "\u{8}", "\r", "\u{3}"]
+        
+        // When
+        keys.forEach {
+            sut.keyWasPressed(key: $0)
+        }
+        
+        // Then
+        XCTAssertEqual(sut.calculationResult, "155")
     }
     
     func testMaximumNumberOfDigits() throws {
