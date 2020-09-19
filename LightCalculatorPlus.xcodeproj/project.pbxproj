@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		391EF3FC2514ECDB005AACA3 /* KeyInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391EF3FB2514ECDB005AACA3 /* KeyInputController.swift */; };
+		391EF4042515925B005AACA3 /* KeyInputControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391EF4032515925B005AACA3 /* KeyInputControllerTests.swift */; };
+		391EF416251598A0005AACA3 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391EF40B25159844005AACA3 /* Mocks.swift */; };
 		39536D8B2500A07F00855091 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8A2500A07F00855091 /* ContentViewModel.swift */; };
 		39536D8D2500A09D00855091 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8C2500A09D00855091 /* HButton.swift */; };
 		39536D902500A0B700855091 /* HButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8F2500A0B700855091 /* HButtonStyle.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		391EF3FB2514ECDB005AACA3 /* KeyInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputController.swift; sourceTree = "<group>"; };
+		391EF4032515925B005AACA3 /* KeyInputControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyInputControllerTests.swift; sourceTree = "<group>"; };
+		391EF40B25159844005AACA3 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		39536D882500A01E00855091 /* HCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HCalculator.entitlements; sourceTree = "<group>"; };
 		39536D8A2500A07F00855091 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		39536D8C2500A09D00855091 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
@@ -111,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				39536D9C2500A21800855091 /* HCalculatorTests.swift */,
+				391EF4032515925B005AACA3 /* KeyInputControllerTests.swift */,
+				391EF40B25159844005AACA3 /* Mocks.swift */,
 				39536D9E2500A21800855091 /* Info.plist */,
 			);
 			path = HCalculatorTests;
@@ -144,6 +152,7 @@
 				39536D882500A01E00855091 /* HCalculator.entitlements */,
 				39DE226025009FBB0022FBB3 /* AppDelegate.swift */,
 				39DE226225009FBB0022FBB3 /* SceneDelegate.swift */,
+				391EF3FB2514ECDB005AACA3 /* KeyInputController.swift */,
 				39DE226625009FBC0022FBB3 /* Assets.xcassets */,
 				39DE226B25009FBC0022FBB3 /* LaunchScreen.storyboard */,
 				39DE226E25009FBC0022FBB3 /* Info.plist */,
@@ -300,7 +309,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				391EF4042515925B005AACA3 /* KeyInputControllerTests.swift in Sources */,
 				39536D9D2500A21800855091 /* HCalculatorTests.swift in Sources */,
+				391EF416251598A0005AACA3 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39536D8D2500A09D00855091 /* HButton.swift in Sources */,
+				391EF3FC2514ECDB005AACA3 /* KeyInputController.swift in Sources */,
 				39536D8B2500A07F00855091 /* ContentViewModel.swift in Sources */,
 				39536D952500A0FF00855091 /* Double.swift in Sources */,
 				39536D932500A0E600855091 /* Color.swift in Sources */,
@@ -516,7 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HCalculator/HCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"HCalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = LY87V7AVCG;
 				ENABLE_PREVIEWS = YES;
@@ -525,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.BasicCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -540,7 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HCalculator/HCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"HCalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = LY87V7AVCG;
 				ENABLE_PREVIEWS = YES;
@@ -549,7 +561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.BasicCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
