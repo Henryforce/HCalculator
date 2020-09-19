@@ -14,7 +14,9 @@ struct MockView: View {
     @EnvironmentObject var state: AppState
     
     var body: some View {
-        VStack { }
+        VStack {
+            Text("Nothing")
+        }
     }
     
 }

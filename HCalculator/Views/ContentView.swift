@@ -183,7 +183,7 @@ struct ContentView: View, KeyInput {
 }
 
 fileprivate struct Constants {
-    static let textHeight: CGFloat = 0.28
+    static let textHeight: CGFloat = 0.21
     static let rowHeight: CGFloat = 0.11
 }
 
