@@ -44,14 +44,16 @@ final class HCalculatorTests: XCTestCase {
     }
     
     func testPressingKeysAppendsNumbersOnResultValue() throws {
+        // Given
+        let keys = ["1", "2", "3", "4", "5", "+", "6", "-", "7", "/", "8", "*", "9", ".", "0", "=", "\u{8}", "\r", "\u{3}"]
+        
         // When
-        let keys = ["1", "2", "3", "4", "5", "+", "6", "-", "7", "/", "8", "*", "9", "0", "=", "\u{8}", "\r", "\u{3}"]
         keys.forEach {
             sut.keyWasPressed(key: $0)
         }
         
         // Then
-        XCTAssertEqual(sut.calculationResult, "163")
+        XCTAssertEqual(sut.calculationResult, "155")
     }
     
     func testMaximumNumberOfDigits() throws {

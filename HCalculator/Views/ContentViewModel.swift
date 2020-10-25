@@ -48,6 +48,7 @@ final class ContentViewModel: ObservableObject {
         case "-": minusWasPressed()
         case "/": divisionWasPressed()
         case "*": plusWasPressed()
+        case ".": pointWasPressed()
         case "=", "\r", "\u{3}": equalWasPressed()
         case "\u{8}": deleteWasPressed()
         default: break
