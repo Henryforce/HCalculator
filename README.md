@@ -12,3 +12,6 @@ Really basic calculator made in SwiftUI.
 
 [codecov]: https://codecov.io/gh/Henryforce/HCalculator/branch/master
 [travis]: https://travis-ci.com/Henryforce/HCalculator
+
+App store Link:
+https://apps.apple.com/us/app/lightcalculatorplus/id1530321593
