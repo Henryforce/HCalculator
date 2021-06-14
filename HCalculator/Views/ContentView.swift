@@ -19,38 +19,38 @@ struct ContentView: View, KeyInput {
             
             VStack(alignment: .trailing) {
                 
-                Text(self.viewModel.calculationResult)
-                    .font(.largeTitle)
-                    .fontWeight(.heavy)
-                    .foregroundColor(Color.HBlue)
-                    .frame(minHeight: geometry.size.height * Constants.textHeight)
-                    .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
-                    .accessibility(identifier: "Result")
-                    .onAppear {
-                        self.state.delegate = self
-                    }
+                VStack(alignment: .trailing) {
+                    Text(self.viewModel.calculationResult)
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .foregroundColor(Color.HBlue)
+                        .accessibility(identifier: "Result")
+                    Text(self.viewModel.spelledText)
+                        .font(.footnote)
+                        .fontWeight(.light)
+                        .foregroundColor(Color.HBlue)
+                }
+                .frame(minHeight: geometry.size.height * Constants.textHeight)
+                .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
+                .onAppear {
+                    self.state.delegate = self
+                }
                 
                 HStack(spacing: 10) {
                     Button(action: {
                         self.viewModel.ACWasPressed()
                     }, label: {
-                        HButton(title: "AC",
-                                backgroundColor: Color.init(hex: "#eeeeeeff"),
-                                titleColor: Color.init(hex: "#4f8a8bff"))
+                        HButton.acButton
                     })
                     Button(action: {
                         self.viewModel.positiveNegativeWasPressed()
                     }, label: {
-                        HButton(title: "+/-",
-                                backgroundColor: Color.init(hex: "#eeeeeeff"),
-                                titleColor: Color.init(hex: "#4f8a8bff"))
+                        HButton.signButton
                     })
                     Button(action: {
                         self.viewModel.deleteWasPressed()
                     }, label: {
-                        HButton(title: "<|",
-                                backgroundColor: Color.init(hex: "#eeeeeeff"),
-                                titleColor: Color.init(hex: "#4f8a8bff"))
+                        HButton.deleteButton
                     })
                     Button(action: {
                         self.viewModel.divisionWasPressed()
@@ -187,14 +187,14 @@ fileprivate struct Constants {
     static let rowHeight: CGFloat = 0.11
 }
 
-#if DEBUG
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-//        Group {
-//            ContentView()
-//                .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
-//        }
-    }
-}
-#endif
+//#if DEBUG
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+////        Group {
+////            ContentView()
+////                .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
+////        }
+//    }
+//}
+//#endif

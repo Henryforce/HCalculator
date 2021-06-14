@@ -6,20 +6,44 @@
 //  Copyright © 2020 Henry Serrano. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
 
 final class ContentViewModel: ObservableObject {
     
     @Published var calculationResult: String = "0"
+    @Published var spelledText: String = "..."
     @Published var plusButtonStyle = HButtonStyle()
     @Published var minusButtonStyle = HButtonStyle()
     @Published var multiplyButtonStyle = HButtonStyle()
     @Published var divisionButtonStyle = HButtonStyle()
 
-    private var lastValue = 0.0
+    private var calculationResultRaw: String = "0" {
+        didSet {
+            formatter.numberStyle = .decimal
+            guard let decimal = Decimal(string: calculationResultRaw),
+                  let formatted = formatter.string(from: NSDecimalNumber(decimal: decimal)) else { return }
+            calculationResult = formatted
+            
+            formatter.numberStyle = .spellOut
+            guard let spell = formatter.string(from: NSDecimalNumber(decimal: decimal)) else { return }
+            spelledText = spell
+        }
+    }
+
+    private lazy var lastValue = Decimal()
     private var areActionsEnabled = false
     private var shouldReplaceCurrentResult = false
     private var stack = [MathAction]()
+    private lazy var formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.allowsFloats = true
+        formatter.alwaysShowsDecimalSeparator = false
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 8
+        formatter.locale = .init(identifier: "en_US")
+        return formatter
+    }()
     
     enum MathAction: Equatable {
         case addition
@@ -47,7 +71,7 @@ final class ContentViewModel: ObservableObject {
         case "+": plusWasPressed()
         case "-": minusWasPressed()
         case "/": divisionWasPressed()
-        case "*": plusWasPressed()
+        case "*": multiplyWasPressed()
         case ".": pointWasPressed()
         case "=", "\r", "\u{3}": equalWasPressed()
         case "\u{8}": deleteWasPressed()
@@ -96,23 +120,25 @@ final class ContentViewModel: ObservableObject {
     }
     
     func ACWasPressed() {
-        calculationResult = "0"
+        formatter.alwaysShowsDecimalSeparator = false
+        calculationResultRaw = "0"
         stack.removeAll()
         resetButtons()
         areActionsEnabled = false
     }
     
     func positiveNegativeWasPressed() {
-        guard let result = Double(calculationResult) else { return }
-        updateCalculationResult(from: result * -1.0)
+        guard let result = Decimal(string: calculationResultRaw) else { return }
+        updateCalculationResult(from: result * -1)
     }
     
     func deleteWasPressed() {
-        if !shouldReplaceCurrentResult, !calculationResult.isEmpty {
-            calculationResult.removeLast()
-            
-            if calculationResult.isEmpty {
-                calculationResult = "0"
+        if !shouldReplaceCurrentResult, !calculationResultRaw.isEmpty {
+            calculationResultRaw.removeLast()
+            if calculationResultRaw.isEmpty {
+                calculationResultRaw = "0"
+            } else if !calculationResultRaw.contains(".") {
+                formatter.alwaysShowsDecimalSeparator = false
             }
         }
     }
@@ -146,14 +172,15 @@ final class ContentViewModel: ObservableObject {
     }
     
     func pointWasPressed() {
-        if !calculationResult.contains(".") {
-            let string = calculationResult == "0" ? "0." : "."
+        formatter.alwaysShowsDecimalSeparator = true
+        if !calculationResultRaw.contains(".") {
+            let string = calculationResultRaw == "0" ? "0." : "."
             addNumberString(number: string)
         }
     }
     
     func equalWasPressed() {
-        guard let currentValue = Double(calculationResult) else { return }
+        guard let currentValue = Decimal(string: calculationResultRaw) else { return }
         
         if let previousAction = stack.last {
             executeAction(action: previousAction, and: currentValue)
@@ -166,10 +193,11 @@ final class ContentViewModel: ObservableObject {
         
         guard isTextReplaceable() else { return }
         
-        if !calculationResult.elementsEqual("0"), !shouldReplaceCurrentResult {
-            calculationResult += number
+        if !calculationResultRaw.elementsEqual("0"), !shouldReplaceCurrentResult {
+            calculationResultRaw += number
         } else {
-            calculationResult = number
+            formatter.alwaysShowsDecimalSeparator = number == "0."
+            calculationResultRaw = number
         }
         
         if shouldReplaceCurrentResult {
@@ -179,51 +207,45 @@ final class ContentViewModel: ObservableObject {
         areActionsEnabled = true
     }
     
-    private func processCurrentValue() -> Double? {
-        guard var currentValue = Double(calculationResult) else { return nil }
+    private func processCurrentValue() -> Decimal? {
+        guard var currentValue = Decimal(string: calculationResultRaw) else { return nil }
         
         if let previousAction = stack.last, !shouldReplaceCurrentResult {
             executeAction(action: previousAction, and: currentValue)
-            currentValue = Double(calculationResult) ?? currentValue
+            currentValue = Decimal(string: calculationResultRaw) ?? currentValue
         }
         
         return currentValue
     }
     
-    private func addActionToStack(action: MathAction, with currentValue: Double) {
+    private func addActionToStack(action: MathAction, with currentValue: Decimal) {
         stack.append(action)
         
         lastValue = currentValue
         shouldReplaceCurrentResult = true
     }
     
-    private func executeAction(action: MathAction, and currentValue: Double) {
-        let result: Double
+    private func executeAction(action: MathAction, and currentValue: Decimal) {
+        let result: Decimal
         
         switch action {
         case .addition:
             result = lastValue + currentValue
-            break
         case .substraction:
             result = lastValue - currentValue
-            break
         case .multiply:
             result = lastValue * currentValue
-            break
         case .division:
             result = lastValue / currentValue
-            break
         }
         
-        updateCalculationResult(from: result.rounded(toPlaces: 8))
+        updateCalculationResult(from: result)
     }
     
-    private func updateCalculationResult(from result: Double) {
-        if result.truncatingRemainder(dividingBy: 1).isZero {
-            calculationResult = String(Int(result))
-        } else {
-            calculationResult = String(result)
-        }
+    private func updateCalculationResult(from result: Decimal) {
+        let stringValue = NSDecimalNumber(decimal: result).stringValue
+        formatter.alwaysShowsDecimalSeparator = stringValue.contains(".") && stringValue.split(separator: ".").count > 1
+        calculationResultRaw = stringValue
     }
     
     private func resetButtons() {
@@ -235,8 +257,8 @@ final class ContentViewModel: ObservableObject {
     
     private func isTextReplaceable() -> Bool {
         shouldReplaceCurrentResult
-            || (calculationResult.contains(".") && calculationResult.count < 10)
-            || (!calculationResult.contains(".") && calculationResult.count < 9)
+            || (calculationResultRaw.contains(".") && calculationResultRaw.count < 10)
+            || (!calculationResultRaw.contains(".") && calculationResultRaw.count < 9)
     }
     
 }

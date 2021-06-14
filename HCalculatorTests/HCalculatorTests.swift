@@ -21,13 +21,13 @@ final class HCalculatorTests: XCTestCase {
         sut = nil
     }
     
-    func testDefaultValueIsZero() throws {
+    func testDefaultValueIsZero() {
         // When no action is executed
         // Then
         XCTAssertEqual(sut.calculationResult, "0")
     }
 
-    func testPressingNumbersAppendsNumbersOnResultValue() throws {
+    func testPressingNumbersAppendsNumbersOnResultValue() {
         // When
         sut.oneWasPressed()
         sut.twoWasPressed()
@@ -40,10 +40,10 @@ final class HCalculatorTests: XCTestCase {
         sut.nineWasPressed()
         
         // Then
-        XCTAssertEqual(sut.calculationResult, "123456789")
+        XCTAssertEqual(sut.calculationResult, "123,456,789")
     }
     
-    func testPressingKeysAppendsNumbersOnResultValue() throws {
+    func testPressingKeysAppendsNumbersOnResultValue() {
         // Given
         let keys = ["1", "2", "3", "4", "5", "+", "6", "-", "7", "/", "8", "*", "9", ".", "0", "=", "\u{8}", "\r", "\u{3}"]
         
@@ -53,10 +53,10 @@ final class HCalculatorTests: XCTestCase {
         }
         
         // Then
-        XCTAssertEqual(sut.calculationResult, "155")
+        XCTAssertEqual(sut.calculationResult, "1,388")
     }
     
-    func testMaximumNumberOfDigits() throws {
+    func testMaximumNumberOfDigits() {
         // When
         sut.oneWasPressed()
         sut.twoWasPressed()
@@ -70,10 +70,10 @@ final class HCalculatorTests: XCTestCase {
         sut.zeroWasPressed() // This will be discarded
         
         // Then
-        XCTAssertEqual(sut.calculationResult, "123456789")
+        XCTAssertEqual(sut.calculationResult, "123,456,789")
     }
     
-    func testPressingNumbersAppendsNumbersAndDeletingMoreNumbersThanAvailableDefaultsToZero() throws {
+    func testPressingNumbersAppendsNumbersAndDeletingMoreNumbersThanAvailableDefaultsToZero() {
         // When
         sut.oneWasPressed()
         sut.twoWasPressed()
@@ -94,7 +94,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "0")
     }
     
-    func testPressingNumbersAppendsNumbersAndPressingACDefaultsToZero() throws {
+    func testPressingNumbersAppendsNumbersAndPressingACDefaultsToZero() {
         // When
         sut.oneWasPressed()
         sut.twoWasPressed()
@@ -113,7 +113,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "0")
     }
     
-    func testChangeSignOfValueWithoutDecimalsDoesNotAddPoint() throws {
+    func testChangeSignOfValueWithoutDecimalsDoesNotAddPoint() {
         // When
         sut.oneWasPressed()
         sut.twoWasPressed()
@@ -123,7 +123,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "-12")
     }
     
-    func testChangeSignOfValueWithDecimalsKeepsPoint() throws {
+    func testChangeSignOfValueWithDecimalsKeepsPoint() {
         // When
         sut.oneWasPressed()
         sut.twoWasPressed()
@@ -136,7 +136,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "-12.05")
     }
     
-    func testChangeSignOfValueMultipleTimesReturnsExpectedSign() throws {
+    func testChangeSignOfValueMultipleTimesReturnsExpectedSign() {
         // When
         sut.oneWasPressed()
         sut.twoWasPressed()
@@ -147,7 +147,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "12")
     }
     
-    func testMathActionWhenResultHasLastCharacterAsPointWorks() throws {
+    func testMathActionWhenResultHasLastCharacterAsPointWorks() {
         // When
         sut.sevenWasPressed()
         sut.pointWasPressed()
@@ -159,7 +159,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "13")
     }
     
-    func testAdditionWhenMaximumNumbersArePutOnScreenAllowToRewrite() throws {
+    func testAdditionWhenMaximumNumbersArePutOnScreenAllowToRewrite() {
         // When
         sut.oneWasPressed()
         sut.twoWasPressed()
@@ -179,10 +179,10 @@ final class HCalculatorTests: XCTestCase {
         sut.equalWasPressed()
         
         // Then
-        XCTAssertEqual(sut.calculationResult, "123456838")
+        XCTAssertEqual(sut.calculationResult, "123,456,838")
     }
     
-    func testAdditionOnIntegersValuesDoesNotAddDecimalPointOnSimpleOperation() throws {
+    func testAdditionOnIntegersValuesDoesNotAddDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         sut.eightWasPressed()
@@ -198,7 +198,28 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "87")
     }
     
-    func testAdditionOnDecimalValuesAddsDecimalPointOnSimpleOperation() throws {
+    func testPressPointFromStart() {
+        // Given
+        var resultStack = [sut.calculationResult]
+        let expectedResultStack = ["0", "0.", "0.5", "0.5", "2", "1"]
+        
+        // When
+        sut.pointWasPressed()
+        resultStack.append(sut.calculationResult)
+        sut.fiveWasPressed()
+        resultStack.append(sut.calculationResult)
+        sut.multiplyWasPressed()
+        resultStack.append(sut.calculationResult)
+        sut.twoWasPressed()
+        resultStack.append(sut.calculationResult)
+        sut.equalWasPressed()
+        resultStack.append(sut.calculationResult)
+        
+        // Then
+        XCTAssertEqual(expectedResultStack, resultStack)
+    }
+    
+    func testAdditionOnDecimalValuesAddsDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         sut.pointWasPressed()
@@ -216,7 +237,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "8.7")
     }
     
-    func testAdditionOnIntegerAndDecimalAddsDecimalPointOnSimpleOperation() throws {
+    func testAdditionOnIntegerAndDecimalAddsDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         
@@ -232,7 +253,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "7.9")
     }
     
-    func testContinuousAdditionOperationsWithEqualPressAtEnd() throws {
+    func testContinuousAdditionOperationsWithEqualPressAtEnd() {
         // When
         sut.oneWasPressed()
         sut.plusWasPressed()
@@ -245,7 +266,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "6")
     }
     
-    func testContinuousAdditionOperationsWithoutEqualPressAtEnd() throws {
+    func testContinuousAdditionOperationsWithoutEqualPressAtEnd() {
         // When
         sut.oneWasPressed()
         sut.plusWasPressed()
@@ -257,7 +278,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "3")
     }
     
-    func testContinuousAdditionOperationsWithAdditionPressAtEnd() throws {
+    func testContinuousAdditionOperationsWithAdditionPressAtEnd() {
         // When
         sut.twoWasPressed()
         sut.plusWasPressed()
@@ -268,7 +289,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "5")
     }
     
-    func testSubstractionOnIntegersValuesDoesNotAddDecimalPointOnSimpleOperation() throws {
+    func testSubstractionOnIntegersValuesDoesNotAddDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         sut.eightWasPressed()
@@ -284,7 +305,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "-11")
     }
     
-    func testSubstractionOnDecimalValuesAddsDecimalPointOnSimpleOperation() throws {
+    func testSubstractionOnDecimalValuesAddsDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         sut.pointWasPressed()
@@ -302,7 +323,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "-1.1")
     }
     
-    func testSubstractionOnIntegerAndDecimalAddsDecimalPointOnSimpleOperation() throws {
+    func testSubstractionOnIntegerAndDecimalAddsDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         
@@ -318,7 +339,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "-1.9")
     }
     
-    func testContinuousSubstractionOperationsWithEqualPressAtEnd() throws {
+    func testContinuousSubstractionOperationsWithEqualPressAtEnd() {
         // When
         sut.oneWasPressed()
         sut.minusWasPressed()
@@ -331,7 +352,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "-4")
     }
     
-    func testContinuousSubstractionOperationsWithoutEqualPressAtEnd() throws {
+    func testContinuousSubstractionOperationsWithoutEqualPressAtEnd() {
         // When
         sut.oneWasPressed()
         sut.minusWasPressed()
@@ -343,7 +364,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "3")
     }
     
-    func testContinuousSubstractionOperationsWithAdditionPressAtEnd() throws {
+    func testContinuousSubstractionOperationsWithAdditionPressAtEnd() {
         // When
         sut.twoWasPressed()
         sut.minusWasPressed()
@@ -354,7 +375,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "-1")
     }
     
-    func testMultiplicationOnIntegersValuesDoesNotAddDecimalPointOnSimpleOperation() throws {
+    func testMultiplicationOnIntegersValuesDoesNotAddDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         sut.eightWasPressed()
@@ -367,10 +388,10 @@ final class HCalculatorTests: XCTestCase {
         sut.equalWasPressed()
         
         // Then
-        XCTAssertEqual(sut.calculationResult, "1862")
+        XCTAssertEqual(sut.calculationResult, "1,862")
     }
     
-    func testMultiplicationOnDecimalValuesAddsDecimalPointOnSimpleOperation() throws {
+    func testMultiplicationOnDecimalValuesAddsDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         sut.pointWasPressed()
@@ -388,7 +409,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "18.62")
     }
     
-    func testMultiplicationOnIntegerAndDecimalAddsDecimalPointOnSimpleOperation() throws {
+    func testMultiplicationOnIntegerAndDecimalAddsDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         
@@ -404,7 +425,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "14.7")
     }
     
-    func testContinuousMultiplicationOperationsWithEqualPressAtEnd() throws {
+    func testContinuousMultiplicationOperationsWithEqualPressAtEnd() {
         // When
         sut.oneWasPressed()
         sut.multiplyWasPressed()
@@ -417,7 +438,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "6")
     }
     
-    func testContinuousMultiplicationOperationsWithoutEqualPressAtEnd() throws {
+    func testContinuousMultiplicationOperationsWithoutEqualPressAtEnd() {
         // When
         sut.oneWasPressed()
         sut.multiplyWasPressed()
@@ -429,7 +450,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "3")
     }
     
-    func testContinuousMultiplicationOperationsWithAdditionPressAtEnd() throws {
+    func testContinuousMultiplicationOperationsWithAdditionPressAtEnd() {
         // When
         sut.twoWasPressed()
         sut.multiplyWasPressed()
@@ -440,7 +461,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "6")
     }
     
-    func testDivisionOnIntegersValuesDoesNotAddDecimalPointOnSimpleOperation() throws {
+    func testDivisionOnIntegersValuesDoesNotAddDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         sut.eightWasPressed()
@@ -456,7 +477,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "0.7755102")
     }
     
-    func testDivisionOnDecimalValuesAddsDecimalPointOnSimpleOperation() throws {
+    func testDivisionOnDecimalValuesAddsDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         sut.pointWasPressed()
@@ -474,7 +495,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "0.7755102")
     }
     
-    func testDivisionOnIntegerAndDecimalAddsDecimalPointOnSimpleOperation() throws {
+    func testDivisionOnIntegerAndDecimalAddsDecimalPointOnSimpleOperation() {
         // When
         sut.threeWasPressed()
         
@@ -490,7 +511,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "0.6122449")
     }
     
-    func testContinuousDivisionOperationsWithEqualPressAtEnd() throws {
+    func testContinuousDivisionOperationsWithEqualPressAtEnd() {
         // When
         sut.oneWasPressed()
         sut.divisionWasPressed()
@@ -503,7 +524,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "0.16666667")
     }
     
-    func testContinuousDivisionOperationsWithoutEqualPressAtEnd() throws {
+    func testContinuousDivisionOperationsWithoutEqualPressAtEnd() {
         // When
         sut.oneWasPressed()
         sut.divisionWasPressed()
@@ -515,7 +536,7 @@ final class HCalculatorTests: XCTestCase {
         XCTAssertEqual(sut.calculationResult, "3")
     }
     
-    func testContinuousDivisionOperationsWithAdditionPressAtEnd() throws {
+    func testContinuousDivisionOperationsWithAdditionPressAtEnd() {
         // When
         sut.twoWasPressed()
         sut.divisionWasPressed()
