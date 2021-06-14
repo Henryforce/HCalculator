@@ -14,7 +14,6 @@
 		39536D8D2500A09D00855091 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8C2500A09D00855091 /* HButton.swift */; };
 		39536D902500A0B700855091 /* HButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8F2500A0B700855091 /* HButtonStyle.swift */; };
 		39536D932500A0E600855091 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D922500A0E600855091 /* Color.swift */; };
-		39536D952500A0FF00855091 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D942500A0FF00855091 /* Double.swift */; };
 		39536D9D2500A21800855091 /* HCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D9C2500A21800855091 /* HCalculatorTests.swift */; };
 		39DE226125009FBB0022FBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE226025009FBB0022FBB3 /* AppDelegate.swift */; };
 		39DE226325009FBB0022FBB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE226225009FBB0022FBB3 /* SceneDelegate.swift */; };
@@ -51,7 +50,6 @@
 		39536D8C2500A09D00855091 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
 		39536D8F2500A0B700855091 /* HButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButtonStyle.swift; sourceTree = "<group>"; };
 		39536D922500A0E600855091 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		39536D942500A0FF00855091 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		39536D9A2500A21800855091 /* LightCalculatorPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightCalculatorPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39536D9C2500A21800855091 /* HCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCalculatorTests.swift; sourceTree = "<group>"; };
 		39536D9E2500A21800855091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				39536D922500A0E600855091 /* Color.swift */,
-				39536D942500A0FF00855091 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,7 +238,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Henry Serrano";
 				TargetAttributes = {
 					39536D992500A21800855091 = {
@@ -322,7 +319,6 @@
 				39536D8D2500A09D00855091 /* HButton.swift in Sources */,
 				391EF3FC2514ECDB005AACA3 /* KeyInputController.swift in Sources */,
 				39536D8B2500A07F00855091 /* ContentViewModel.swift in Sources */,
-				39536D952500A0FF00855091 /* Double.swift in Sources */,
 				39536D932500A0E600855091 /* Color.swift in Sources */,
 				39DE226125009FBB0022FBB3 /* AppDelegate.swift in Sources */,
 				39DE226325009FBB0022FBB3 /* SceneDelegate.swift in Sources */,
@@ -371,7 +367,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LY87V7AVCG;
+				DEVELOPMENT_TEAM = ALNMC88BA5;
 				INFOPLIST_FILE = HCalculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -392,7 +388,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LY87V7AVCG;
+				DEVELOPMENT_TEAM = ALNMC88BA5;
 				INFOPLIST_FILE = HCalculatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -434,6 +430,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -494,6 +491,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -530,7 +528,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"HCalculator/Preview Content\"";
-				DEVELOPMENT_TEAM = LY87V7AVCG;
+				DEVELOPMENT_TEAM = ALNMC88BA5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -554,7 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"HCalculator/Preview Content\"";
-				DEVELOPMENT_TEAM = LY87V7AVCG;
+				DEVELOPMENT_TEAM = ALNMC88BA5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -574,7 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LY87V7AVCG;
+				DEVELOPMENT_TEAM = ALNMC88BA5;
 				INFOPLIST_FILE = HCalculatorUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -595,7 +593,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LY87V7AVCG;
+				DEVELOPMENT_TEAM = ALNMC88BA5;
 				INFOPLIST_FILE = HCalculatorUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
