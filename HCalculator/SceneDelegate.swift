@@ -20,12 +20,20 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let stateObject = AppState()
-        let contentView = ContentView().environmentObject(stateObject)
+        let contentView = ContentView()
+            .environmentObject(stateObject)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = KeyInputController(rootView: contentView, state: stateObject)
+            window.overrideUserInterfaceStyle = .dark
+            
+            if CommandLine.arguments.contains("-lightMode") {
+                window.overrideUserInterfaceStyle = .light
+            } else if CommandLine.arguments.contains("-darkMode") {
+                window.overrideUserInterfaceStyle = .dark
+            }
 
             self.window = window
             window.makeKeyAndVisible()
@@ -62,4 +70,3 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
