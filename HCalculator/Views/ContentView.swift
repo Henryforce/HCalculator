@@ -21,10 +21,12 @@ struct ContentView: View, KeyInput {
                 
                 VStack(alignment: .trailing) {
                     Text(self.viewModel.calculationResult)
-                        .font(.largeTitle)
+                        .font(.system(size: min(geometry.size.width, geometry.size.height) * Constants.textHeight * 0.6 ))
                         .fontWeight(.heavy)
                         .foregroundColor(Color.HBlue)
+                        .lineLimit(1)
                         .accessibility(identifier: "Result")
+                        .frame(minHeight: geometry.size.height * Constants.textHeight * 0.8)
                     Text(self.viewModel.spelledText)
                         .font(.footnote)
                         .fontWeight(.light)

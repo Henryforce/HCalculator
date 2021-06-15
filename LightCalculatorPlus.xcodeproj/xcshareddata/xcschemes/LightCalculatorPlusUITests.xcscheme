@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39DE225C25009FBB0022FBB3"
-               BuildableName = "LightCalculatorPlus.app"
-               BlueprintName = "LightCalculatorPlus"
+               BlueprintIdentifier = "39E7BCC52500A647002426AB"
+               BuildableName = "LightCalculatorPlusUITests.xctest"
+               BlueprintName = "LightCalculatorPlusUITests"
                ReferencedContainer = "container:LightCalculatorPlus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,19 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39536D992500A21800855091"
-               BuildableName = "LightCalculatorPlusTests.xctest"
-               BlueprintName = "LightCalculatorPlusTests"
-               ReferencedContainer = "container:LightCalculatorPlus.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
@@ -50,7 +39,7 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "AppStoreSnapshots">
+                  Identifier = "HCalculatorUITests">
                </Test>
             </SkippedTests>
          </TestableReference>
@@ -66,16 +55,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39DE225C25009FBB0022FBB3"
-            BuildableName = "LightCalculatorPlus.app"
-            BlueprintName = "LightCalculatorPlus"
-            ReferencedContainer = "container:LightCalculatorPlus.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -83,16 +62,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "39DE225C25009FBB0022FBB3"
-            BuildableName = "LightCalculatorPlus.app"
-            BlueprintName = "LightCalculatorPlus"
+            BlueprintIdentifier = "39E7BCC52500A647002426AB"
+            BuildableName = "LightCalculatorPlusUITests.xctest"
+            BlueprintName = "LightCalculatorPlusUITests"
             ReferencedContainer = "container:LightCalculatorPlus.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
