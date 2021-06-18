@@ -245,7 +245,9 @@ final class ContentViewModel: ObservableObject {
     private func updateCalculationResult(from result: Decimal) {
         let stringValue = NSDecimalNumber(decimal: result).stringValue
         formatter.alwaysShowsDecimalSeparator = stringValue.contains(".") && stringValue.split(separator: ".").count > 1
-        calculationResultRaw = stringValue
+        calculationResultRaw = stringValue.contains(".")
+            ? String(stringValue.prefix(10))
+            : String(stringValue.prefix(9))
     }
     
     private func resetButtons() {
