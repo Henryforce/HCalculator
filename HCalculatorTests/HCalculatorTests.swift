@@ -508,7 +508,7 @@ final class HCalculatorTests: XCTestCase {
         sut.equalWasPressed()
         
         // Then
-        XCTAssertEqual(sut.calculationResult, "0.6122449")
+        XCTAssertEqual(sut.calculationResult, "0.61224489") // also OK 0.6122449
     }
     
     func testContinuousDivisionOperationsWithEqualPressAtEnd() {
@@ -521,7 +521,7 @@ final class HCalculatorTests: XCTestCase {
         sut.divisionWasPressed()
         
         // Then
-        XCTAssertEqual(sut.calculationResult, "0.16666667")
+        XCTAssertEqual(sut.calculationResult, "0.16666666") // also OK 0.16666667
     }
     
     func testContinuousDivisionOperationsWithoutEqualPressAtEnd() {
@@ -544,7 +544,20 @@ final class HCalculatorTests: XCTestCase {
         sut.divisionWasPressed()
         
         // Then
-        XCTAssertEqual(sut.calculationResult, "0.66666667")
+        XCTAssertEqual(sut.calculationResult, "0.66666666") // also OK 0.66666667
+    }
+    
+    func testDivisionOperationsWithBackspace() {
+        // When
+        sut.oneWasPressed()
+        sut.divisionWasPressed()
+        sut.threeWasPressed()
+        sut.equalWasPressed()
+        sut.deleteWasPressed()
+        sut.deleteWasPressed()
+        
+        // Then
+        XCTAssertEqual(sut.calculationResult, "0.333333")
     }
 
 }

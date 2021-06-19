@@ -27,7 +27,6 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = KeyInputController(rootView: contentView, state: stateObject)
-            window.overrideUserInterfaceStyle = .dark
             
             if CommandLine.arguments.contains("-lightMode") {
                 window.overrideUserInterfaceStyle = .light
