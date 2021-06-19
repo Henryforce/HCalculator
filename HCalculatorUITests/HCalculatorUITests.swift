@@ -72,7 +72,7 @@ final class HCalculatorUITests: XCTestCase {
         XCTAssertEqual(button5PressedResult, "5")
         XCTAssertEqual(divisionPressedResult, "-5")
         XCTAssertEqual(button6PressedResult, "6")
-        XCTAssertEqual(finalResult, "-0.83333333")
+        XCTAssertEqual(finalResult, "-0.8333333")
     }
     
 }
