@@ -559,5 +559,24 @@ final class HCalculatorTests: XCTestCase {
         // Then
         XCTAssertEqual(sut.calculationResult, "0.333333")
     }
+    
+    func testDivisionOperationWithBackspaceDoesNotShowDecimalWhenDecimalNumbersAreAllRemoved() {
+        // When
+        sut.oneWasPressed()
+        for _ in 0..<6 {
+            sut.zeroWasPressed()
+        }
+        sut.divisionWasPressed()
+        sut.zeroWasPressed()
+        sut.pointWasPressed()
+        sut.zeroWasPressed()
+        sut.oneWasPressed()
+        sut.twoWasPressed()
+        sut.equalWasPressed()
+        sut.deleteWasPressed()
+        
+        // Then
+        XCTAssertEqual(sut.calculationResult, "83,333,333")
+    }
 
 }

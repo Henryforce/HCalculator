@@ -139,6 +139,10 @@ final class ContentViewModel: ObservableObject {
                 calculationResultRaw = "0"
             } else if !calculationResultRaw.contains(".") {
                 formatter.alwaysShowsDecimalSeparator = false
+            } else if calculationResultRaw.contains("."),
+                      calculationResultRaw.split(separator: ".").count == 1 {
+                formatter.alwaysShowsDecimalSeparator = false
+                calculationResultRaw.removeLast()
             }
         }
     }
