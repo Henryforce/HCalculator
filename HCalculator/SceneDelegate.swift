@@ -18,9 +18,19 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
+        let isRunningUITest = ProcessInfo.processInfo.arguments.contains("testMode")
+        
+        #if DEBUG
+        // Short-circuit starting app if running unit tests
+        let isUnitTesting = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
+        guard !isUnitTesting || isRunningUITest else { return }
+        #endif
+        
         // Create the SwiftUI view that provides the window contents.
         let stateObject = AppState()
-        let contentView = ContentView()
+        let viewModel = ContentViewModel()
+        let numericPadViewModel = NumericPadViewModel(with: viewModel)
+        let contentView = ContentView(viewModel: viewModel, numericPadViewModel: numericPadViewModel)
             .environmentObject(stateObject)
 
         // Use a UIHostingController as window root view controller.
