@@ -12,11 +12,16 @@
 		391EF416251598A0005AACA3 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391EF40B25159844005AACA3 /* Mocks.swift */; };
 		3927B35426772ADA00B6A544 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927B35326772ADA00B6A544 /* SnapshotHelper.swift */; };
 		3927B35626773DE800B6A544 /* AppStoreSnapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3927B35526773DE800B6A544 /* AppStoreSnapshots.swift */; };
+		39301729276B906100986D6B /* NumericPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39301728276B906100986D6B /* NumericPadView.swift */; };
+		3930172B276B94B200986D6B /* NumericPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930172A276B94B200986D6B /* NumericPadViewModel.swift */; };
+		3930172D276BA67F00986D6B /* NumericPadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930172C276BA67F00986D6B /* NumericPadResult.swift */; };
+		39301732276BB3E200986D6B /* ContentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39301730276BB37900986D6B /* ContentViewModelTests.swift */; };
+		39301733276BB3E800986D6B /* MockNumericPadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930172E276BAEC700986D6B /* MockNumericPadDelegate.swift */; };
 		39536D8B2500A07F00855091 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8A2500A07F00855091 /* ContentViewModel.swift */; };
 		39536D8D2500A09D00855091 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8C2500A09D00855091 /* HButton.swift */; };
 		39536D902500A0B700855091 /* HButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8F2500A0B700855091 /* HButtonStyle.swift */; };
 		39536D932500A0E600855091 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D922500A0E600855091 /* Color.swift */; };
-		39536D9D2500A21800855091 /* HCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D9C2500A21800855091 /* HCalculatorTests.swift */; };
+		39536D9D2500A21800855091 /* NumericPadViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D9C2500A21800855091 /* NumericPadViewModelTests.swift */; };
 		39DE226125009FBB0022FBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE226025009FBB0022FBB3 /* AppDelegate.swift */; };
 		39DE226325009FBB0022FBB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE226225009FBB0022FBB3 /* SceneDelegate.swift */; };
 		39DE226525009FBB0022FBB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE226425009FBB0022FBB3 /* ContentView.swift */; };
@@ -49,13 +54,18 @@
 		391EF40B25159844005AACA3 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		3927B35326772ADA00B6A544 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		3927B35526773DE800B6A544 /* AppStoreSnapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreSnapshots.swift; sourceTree = "<group>"; };
+		39301728276B906100986D6B /* NumericPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericPadView.swift; sourceTree = "<group>"; };
+		3930172A276B94B200986D6B /* NumericPadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericPadViewModel.swift; sourceTree = "<group>"; };
+		3930172C276BA67F00986D6B /* NumericPadResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericPadResult.swift; sourceTree = "<group>"; };
+		3930172E276BAEC700986D6B /* MockNumericPadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNumericPadDelegate.swift; sourceTree = "<group>"; };
+		39301730276BB37900986D6B /* ContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModelTests.swift; sourceTree = "<group>"; };
 		39536D882500A01E00855091 /* HCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HCalculator.entitlements; sourceTree = "<group>"; };
 		39536D8A2500A07F00855091 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		39536D8C2500A09D00855091 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
 		39536D8F2500A0B700855091 /* HButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButtonStyle.swift; sourceTree = "<group>"; };
 		39536D922500A0E600855091 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		39536D9A2500A21800855091 /* LightCalculatorPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightCalculatorPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		39536D9C2500A21800855091 /* HCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCalculatorTests.swift; sourceTree = "<group>"; };
+		39536D9C2500A21800855091 /* NumericPadViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericPadViewModelTests.swift; sourceTree = "<group>"; };
 		39536D9E2500A21800855091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39DE225D25009FBB0022FBB3 /* LightCalculatorPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightCalculatorPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DE226025009FBB0022FBB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +105,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39301727276B903B00986D6B /* NumericPad */ = {
+			isa = PBXGroup;
+			children = (
+				39301728276B906100986D6B /* NumericPadView.swift */,
+				3930172A276B94B200986D6B /* NumericPadViewModel.swift */,
+				3930172C276BA67F00986D6B /* NumericPadResult.swift */,
+			);
+			path = NumericPad;
+			sourceTree = "<group>";
+		};
 		39536D892500A03B00855091 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +137,10 @@
 		39536D9B2500A21800855091 /* HCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				39536D9C2500A21800855091 /* HCalculatorTests.swift */,
+				39536D9C2500A21800855091 /* NumericPadViewModelTests.swift */,
+				39301730276BB37900986D6B /* ContentViewModelTests.swift */,
 				391EF4032515925B005AACA3 /* KeyInputControllerTests.swift */,
+				3930172E276BAEC700986D6B /* MockNumericPadDelegate.swift */,
 				391EF40B25159844005AACA3 /* Mocks.swift */,
 				39536D9E2500A21800855091 /* Info.plist */,
 			);
@@ -148,6 +170,7 @@
 		39DE225F25009FBB0022FBB3 /* HCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				39301727276B903B00986D6B /* NumericPad */,
 				39536D912500A0C800855091 /* Extensions */,
 				39536D892500A03B00855091 /* Views */,
 				39536D882500A01E00855091 /* HCalculator.entitlements */,
@@ -312,8 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39301733276BB3E800986D6B /* MockNumericPadDelegate.swift in Sources */,
+				39301732276BB3E200986D6B /* ContentViewModelTests.swift in Sources */,
 				391EF4042515925B005AACA3 /* KeyInputControllerTests.swift in Sources */,
-				39536D9D2500A21800855091 /* HCalculatorTests.swift in Sources */,
+				39536D9D2500A21800855091 /* NumericPadViewModelTests.swift in Sources */,
 				391EF416251598A0005AACA3 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,10 +348,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				39536D8D2500A09D00855091 /* HButton.swift in Sources */,
+				3930172D276BA67F00986D6B /* NumericPadResult.swift in Sources */,
 				391EF3FC2514ECDB005AACA3 /* KeyInputController.swift in Sources */,
 				39536D8B2500A07F00855091 /* ContentViewModel.swift in Sources */,
 				39536D932500A0E600855091 /* Color.swift in Sources */,
 				39DE226125009FBB0022FBB3 /* AppDelegate.swift in Sources */,
+				39301729276B906100986D6B /* NumericPadView.swift in Sources */,
+				3930172B276B94B200986D6B /* NumericPadViewModel.swift in Sources */,
 				39DE226325009FBB0022FBB3 /* SceneDelegate.swift in Sources */,
 				39536D902500A0B700855091 /* HButtonStyle.swift in Sources */,
 				39DE226525009FBB0022FBB3 /* ContentView.swift in Sources */,
@@ -534,7 +562,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HCalculator/HCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"HCalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = ALNMC88BA5;
 				ENABLE_PREVIEWS = YES;
@@ -543,7 +571,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.BasicCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -558,7 +586,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HCalculator/HCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"HCalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = ALNMC88BA5;
 				ENABLE_PREVIEWS = YES;
@@ -567,7 +595,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.henryforce.BasicCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
