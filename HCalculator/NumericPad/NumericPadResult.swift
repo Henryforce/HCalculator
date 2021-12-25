@@ -58,6 +58,6 @@ extension NumericPadResult {
         self.formattedString = formatted
         self.rawString = rawString
         self.spelledString = spell
-        self.decimalValue = decimal
+        self.decimalValue = fullDecimal
     }
 }
