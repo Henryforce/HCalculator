@@ -30,10 +30,4 @@ extension HButton {
     static var acButton: HButton {
         HButton(title: "AC", backgroundColor: Color.HWhite, titleColor: Color.HBlue)
     }
-    static var signButton: HButton {
-        HButton(title: "+/-", backgroundColor: Color.HWhite, titleColor: Color.HBlue)
-    }
-    static var deleteButton: HButton {
-        HButton(title: "<|", backgroundColor: Color.HWhite, titleColor: Color.HBlue)
-    }
 }

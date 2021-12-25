@@ -27,19 +27,21 @@ struct NumericPadView: View, KeyInput {
                     Button(action: {
                         self.viewModel.positiveNegativeWasPressed()
                     }, label: {
-                        HButton.signButton
+                        HImageButton.signButton
+                            .accessibility(identifier: "sign")
                     })
                     Button(action: {
                         self.viewModel.deleteWasPressed()
                     }, label: {
-                        HButton.deleteButton
+                        HImageButton.deleteButton
+                            .accessibility(identifier: "delete")
                     })
                     Button(action: {
                         self.viewModel.divisionWasPressed()
                     }, label: {
-                        Text("/")
+                        Image(systemName: "divide")
                             .font(.title)
-                            .fontWeight(.medium)
+                            .accessibility(identifier: "divide")
                     })
                     .buttonStyle(self.viewModel.divisionButtonStyle)
                 }
@@ -65,9 +67,9 @@ struct NumericPadView: View, KeyInput {
                     Button(action: {
                         self.viewModel.multiplyWasPressed()
                     }, label: {
-                        Text("X")
+                        Image(systemName: "multiply")
                             .font(.title)
-                            .fontWeight(.medium)
+                            .accessibility(identifier: "multiply")
                     })
                     .buttonStyle(self.viewModel.multiplyButtonStyle)
                 }
@@ -93,9 +95,9 @@ struct NumericPadView: View, KeyInput {
                     Button(action: {
                         self.viewModel.minusWasPressed()
                     }, label: {
-                        Text("-")
+                        Image(systemName: "minus")
                             .font(.title)
-                            .fontWeight(.medium)
+                            .accessibility(identifier: "minus")
                     })
                     .buttonStyle(self.viewModel.minusButtonStyle)
                 }
@@ -121,9 +123,9 @@ struct NumericPadView: View, KeyInput {
                     Button(action: {
                         self.viewModel.plusWasPressed()
                     }, label: {
-                        Text("+")
+                        Image(systemName: "plus")
                             .font(.title)
-                            .fontWeight(.medium)
+                            .accessibility(identifier: "plus")
                     })
                     .buttonStyle(self.viewModel.plusButtonStyle)
                 }
@@ -145,9 +147,8 @@ struct NumericPadView: View, KeyInput {
                     Button(action: {
                         self.viewModel.equalWasPressed()
                     }, label: {
-                        HButton(title: "=",
-                                backgroundColor: Color.HOrange,
-                                titleColor: Color.HBlack)
+                        HImageButton.equalButton
+                            .accessibility(identifier: "equal")
                     })
                 }
                 .frame(height: geometry.size.height * Constants.rowHeight - Constants.paddingBottomDifference)

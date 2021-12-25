@@ -30,17 +30,30 @@ struct NumericPadResult {
 extension NumericPadResult {
     init?(from rawString: String, and formatter: NumberFormatter) {
         formatter.numberStyle = .decimal
-        guard let decimal = Decimal(string: rawString),
+        
+        // Split decimals and integers
+        let splittedRawString = rawString.split(separator: ".")
+        
+        guard let fullDecimal = Decimal(string: rawString),
+              let integerString = splittedRawString.first,
+              let decimal = Decimal(string: String(integerString)),
               var formatted = formatter.string(from: NSDecimalNumber(decimal: decimal))
         else { return nil }
+        
+        // Make su
+        if decimal.isZero, fullDecimal.isSignMinus {
+            formatted = "-\(formatted)"
+        }
 
-        // Handle the case where having a zero following the decimal point would be removed by the formatter.
-        if rawString.contains(".0") && !formatted.contains(".0") {
-            formatted += "0"
+        // Append decimal to formatted integers string if any
+        if splittedRawString.count > 1 {
+            let decimalString = splittedRawString[1]
+            formatted += decimalString
         }
         
         formatter.numberStyle = .spellOut
-        guard let spell = formatter.string(from: NSDecimalNumber(decimal: decimal)) else { return nil }
+        guard let spell = formatter.string(from: NSDecimalNumber(decimal: fullDecimal))
+        else { return nil }
         
         self.formattedString = formatted
         self.rawString = rawString

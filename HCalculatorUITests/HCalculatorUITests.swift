@@ -28,16 +28,16 @@ final class HCalculatorUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let additionLabel = app.buttons["+"]
+        let additionLabel = app.buttons["plus"]
         let button1 = app.buttons["1"]
         let button2 = app.buttons["2"]
         let button4 = app.buttons["4"]
         let button5 = app.buttons["5"]
         let button6 = app.buttons["6"]
-        let buttonSubstraction = app.buttons["-"]
-        let buttonMultiplication = app.buttons["X"]
-        let buttonDivision = app.buttons["/"]
-        let buttonEqual = app.buttons["="]
+        let buttonSubstraction = app.buttons["minus"]
+        let buttonMultiplication = app.buttons["multiply"]
+        let buttonDivision = app.buttons["divide"]
+        let buttonEqual = app.buttons["equal"]
         let resultLabel = app.staticTexts["Result"]
 
         // When
