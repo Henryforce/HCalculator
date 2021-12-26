@@ -576,7 +576,7 @@ final class NumericPadViewModelTests: XCTestCase {
         XCTAssertEqual(delegate.resultUpdatedStack.last?.formattedString, "83,333,333")
     }
 
-    func testH() {
+    func testZeroIsAvailable() {
         // When
         sut.oneWasPressed()
         sut.pointWasPressed()
@@ -593,6 +593,68 @@ final class NumericPadViewModelTests: XCTestCase {
         // Then
         XCTAssertEqual(firstResult, "1.0")
         XCTAssertEqual(delegate.resultUpdatedStack.last?.formattedString, "35.")
+    }
+    
+    func testZerosAreAppendedToTheRight() {
+        // When
+        sut.oneWasPressed()
+        sut.pointWasPressed()
+        sut.zeroWasPressed()
+        sut.zeroWasPressed()
+        sut.zeroWasPressed()
+        
+        // Then
+        XCTAssertEqual(delegate.resultUpdatedStack.last?.formattedString, "1.000")
+    }
+    
+    func testZerosAreAppendedToTheRightAndRemovedOnMathOperations() {
+        // When
+        sut.oneWasPressed()
+        sut.pointWasPressed()
+        sut.zeroWasPressed()
+        sut.zeroWasPressed()
+        sut.zeroWasPressed()
+        
+        sut.multiplyWasPressed()
+        
+        sut.oneWasPressed()
+        
+        sut.equalWasPressed()
+        
+        // Then
+        XCTAssertEqual(delegate.resultUpdatedStack.last?.formattedString, "1")
+    }
+    
+    func testNegativeDivisionWithZeroAsInteger() {
+        // When
+        sut.fiveWasPressed()
+        
+        sut.positiveNegativeWasPressed()
+        
+        sut.divisionWasPressed()
+        
+        sut.sixWasPressed()
+        
+        sut.equalWasPressed()
+        
+        // Then
+        XCTAssertEqual(delegate.resultUpdatedStack.last?.formattedString, "-0.8333333")
+    }
+    
+    func testNegativeDivisionWithOtherThanZeroAsInteger() {
+        // When
+        sut.sevenWasPressed()
+        
+        sut.positiveNegativeWasPressed()
+        
+        sut.divisionWasPressed()
+        
+        sut.sixWasPressed()
+        
+        sut.equalWasPressed()
+        
+        // Then
+        XCTAssertEqual(delegate.resultUpdatedStack.last?.formattedString, "-1.1666666")
     }
 
 }

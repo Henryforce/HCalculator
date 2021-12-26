@@ -244,11 +244,22 @@ final class NumericPadViewModel: ObservableObject {
     }
     
     private func updateCalculationResult(from result: Decimal) {
-        let stringValue = NSDecimalNumber(decimal: result).stringValue
-        formatter.alwaysShowsDecimalSeparator = stringValue.contains(".") && stringValue.split(separator: ".").count > 1
-        calculationResultRaw = stringValue.contains(".")
+        var stringValue = NSDecimalNumber(decimal: result).stringValue
+        formatter.alwaysShowsDecimalSeparator = stringValue.contains(".")
+            && stringValue.split(separator: ".").count > 1
+
+        stringValue = stringValue.contains(".")
             ? String(stringValue.prefix(10))
             : String(stringValue.prefix(9))
+        
+        // Remove zeros on the right
+        if stringValue.contains(".") {
+            while let lastValue = stringValue.last, lastValue == "0" {
+                stringValue.removeLast()
+            }
+        }
+        
+        calculationResultRaw = stringValue
     }
     
     private func resetButtons() {

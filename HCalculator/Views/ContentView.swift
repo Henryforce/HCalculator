@@ -27,16 +27,18 @@ struct ContentView: View {
                         .foregroundColor(Color.HBlue)
                         .lineLimit(1)
                         .accessibility(identifier: "Result")
+                        .padding()
                         .frame(minHeight: geometry.size.height * Constants.textHeight * 0.8)
                     Text(self.viewModel.spelledText)
                         .font(.footnote)
                         .fontWeight(.light)
                         .foregroundColor(Color.HBlue)
+                        .padding()
                 }
-                .frame(height: geometry.size.height * 0.3)
+                .frame(height: geometry.size.height * 0.22)
                 
                 NumericPadView(viewModel: numericPadViewModel)
-                    .frame(height: geometry.size.height * 0.7)
+                    .frame(height: geometry.size.height * 0.78)
                     .environmentObject(state)
                 
             }
