@@ -21,7 +21,7 @@
 		39536D8B2500A07F00855091 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8A2500A07F00855091 /* ContentViewModel.swift */; };
 		39536D8D2500A09D00855091 /* HButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8C2500A09D00855091 /* HButton.swift */; };
 		39536D902500A0B700855091 /* HButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D8F2500A0B700855091 /* HButtonStyle.swift */; };
-		39536D932500A0E600855091 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D922500A0E600855091 /* Color.swift */; };
+		39536D932500A0E600855091 /* Color+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D922500A0E600855091 /* Color+AppColors.swift */; };
 		39536D9D2500A21800855091 /* NumericPadViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39536D9C2500A21800855091 /* NumericPadViewModelTests.swift */; };
 		39DE226125009FBB0022FBB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE226025009FBB0022FBB3 /* AppDelegate.swift */; };
 		39DE226325009FBB0022FBB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE226225009FBB0022FBB3 /* SceneDelegate.swift */; };
@@ -65,7 +65,7 @@
 		39536D8A2500A07F00855091 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		39536D8C2500A09D00855091 /* HButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButton.swift; sourceTree = "<group>"; };
 		39536D8F2500A0B700855091 /* HButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HButtonStyle.swift; sourceTree = "<group>"; };
-		39536D922500A0E600855091 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		39536D922500A0E600855091 /* Color+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColors.swift"; sourceTree = "<group>"; };
 		39536D9A2500A21800855091 /* LightCalculatorPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightCalculatorPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39536D9C2500A21800855091 /* NumericPadViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericPadViewModelTests.swift; sourceTree = "<group>"; };
 		39536D9E2500A21800855091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		39536D912500A0C800855091 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				39536D922500A0E600855091 /* Color.swift */,
+				39536D922500A0E600855091 /* Color+AppColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -354,7 +354,7 @@
 				3930172D276BA67F00986D6B /* NumericPadResult.swift in Sources */,
 				391EF3FC2514ECDB005AACA3 /* KeyInputController.swift in Sources */,
 				39536D8B2500A07F00855091 /* ContentViewModel.swift in Sources */,
-				39536D932500A0E600855091 /* Color.swift in Sources */,
+				39536D932500A0E600855091 /* Color+AppColors.swift in Sources */,
 				39DE226125009FBB0022FBB3 /* AppDelegate.swift in Sources */,
 				39301729276B906100986D6B /* NumericPadView.swift in Sources */,
 				3930172B276B94B200986D6B /* NumericPadViewModel.swift in Sources */,

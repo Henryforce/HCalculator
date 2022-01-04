@@ -24,7 +24,7 @@ struct ContentView: View {
                     Text(self.viewModel.calculationResult)
                         .font(.system(size: min(geometry.size.width, geometry.size.height) * Constants.textHeight * 0.5 ))
                         .fontWeight(.heavy)
-                        .foregroundColor(Color.HBlue)
+                        .foregroundColor(Color.appBlue)
                         .lineLimit(1)
                         .accessibility(identifier: "Result")
                         .padding()
@@ -32,7 +32,7 @@ struct ContentView: View {
                     Text(self.viewModel.spelledText)
                         .font(.footnote)
                         .fontWeight(.light)
-                        .foregroundColor(Color.HBlue)
+                        .foregroundColor(Color.appBlue)
                         .padding()
                 }
                 .frame(height: geometry.size.height * 0.22)

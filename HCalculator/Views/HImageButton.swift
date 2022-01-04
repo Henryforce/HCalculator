@@ -11,8 +11,8 @@ import SwiftUI
 struct HImageButton: View {
     
     let systemName: String
-    var backgroundColor = Color.HBlue
-    var titleColor = Color.HWhite
+    var backgroundColor = Color.appBlue
+    var titleColor = Color.appWhite
     
     var body: some View {
         Image(systemName: systemName)
@@ -27,12 +27,12 @@ struct HImageButton: View {
 
 extension HImageButton {
     static var signButton: HImageButton {
-        HImageButton(systemName: "plus.slash.minus", backgroundColor: Color.HWhite, titleColor: Color.HBlue)
+        HImageButton(systemName: "plus.slash.minus", backgroundColor: Color.appWhite, titleColor: Color.appBlue)
     }
     static var deleteButton: HImageButton {
-        HImageButton(systemName: "delete.left", backgroundColor: Color.HWhite, titleColor: Color.HBlue)
+        HImageButton(systemName: "delete.left", backgroundColor: Color.appWhite, titleColor: Color.appBlue)
     }
     static var equalButton: HImageButton {
-        HImageButton(systemName: "equal", backgroundColor: Color.HOrange, titleColor: Color.HBlack)
+        HImageButton(systemName: "equal", backgroundColor: Color.appOrange, titleColor: Color.appSemiblack)
     }
 }
