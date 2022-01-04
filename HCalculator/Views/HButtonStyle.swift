@@ -10,8 +10,8 @@ import SwiftUI
 
 struct HButtonStyle: ButtonStyle {
     
-    var foregroundColor = Color.HBlack
-    var backgroundColor = Color.HOrange
+    var foregroundColor = Color.appSemiblack
+    var backgroundColor = Color.appOrange
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
@@ -22,13 +22,13 @@ struct HButtonStyle: ButtonStyle {
     }
     
     mutating func resetToActionDefault() {
-        foregroundColor = Color.HBlack
-        backgroundColor = Color.HOrange
+        foregroundColor = Color.appSemiblack
+        backgroundColor = Color.appOrange
     }
     
     mutating func changeToActionSelected() {
-        foregroundColor = Color.HBlue
-        backgroundColor = Color.HWhite
+        foregroundColor = Color.appBlue
+        backgroundColor = Color.appWhite
     }
     
 }

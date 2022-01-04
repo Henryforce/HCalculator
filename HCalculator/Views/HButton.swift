@@ -11,8 +11,8 @@ import SwiftUI
 struct HButton: View {
     
     var title: String
-    var backgroundColor = Color.HBlue
-    var titleColor = Color.HWhite
+    var backgroundColor = Color.appBlue
+    var titleColor = Color.appWhite
     
     var body: some View {
         Text(title)
@@ -28,6 +28,6 @@ struct HButton: View {
 
 extension HButton {
     static var acButton: HButton {
-        HButton(title: "AC", backgroundColor: Color.HWhite, titleColor: Color.HBlue)
+        HButton(title: "AC", backgroundColor: Color.appWhite, titleColor: Color.appBlue)
     }
 }
