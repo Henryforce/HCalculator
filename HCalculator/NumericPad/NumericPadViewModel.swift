@@ -174,6 +174,14 @@ final class NumericPadViewModel: ObservableObject {
     
     func pointWasPressed() {
         formatter.alwaysShowsDecimalSeparator = true
+      
+        // If there is an item in the stack and the point was pressed when the shouldReplace
+        // variable is set, then manually replace the raw string with a 0 to keep the decimal
+        // behavior consistent.
+        if !stack.isEmpty, shouldReplaceCurrentResult {
+            addNumberString(number: "0")
+        }
+      
         if !calculationResultRaw.contains(".") {
             let string = calculationResultRaw == "0" ? "0." : "."
             addNumberString(number: string)

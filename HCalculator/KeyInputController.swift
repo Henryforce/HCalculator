@@ -18,11 +18,13 @@ final class AppState: ObservableObject {
     var delegate: KeyInput?
 }
 
+enum KeyConstants {
+    static let keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "/", "*", "=", ".", "\u{8}", "\r", "\u{3}"]
+}
+
 final class KeyInputController<Content: View>: UIHostingController<Content> {
 
     private let state: AppState
-
-    let keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "/", "*", "=", ".", "\u{8}", "\r", "\u{3}"]
     
     init(rootView: Content, state: AppState) {
         self.state = state
@@ -38,7 +40,7 @@ final class KeyInputController<Content: View>: UIHostingController<Content> {
     }
 
     override var keyCommands: [UIKeyCommand]? {
-        return keys.map {
+        return KeyConstants.keys.map {
             UIKeyCommand(input: $0,
                          modifierFlags: [],
                          action: #selector(keyPressed(_:)))
