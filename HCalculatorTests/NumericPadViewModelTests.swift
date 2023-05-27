@@ -656,5 +656,22 @@ final class NumericPadViewModelTests: XCTestCase {
         // Then
         XCTAssertEqual(delegate.resultUpdatedStack.last?.formattedString, "-1.1666666")
     }
+  
+    func testNoMissingDecimalAfterMultiplyAndBeforeEqual() {
+        // When.
+        sut.eightWasPressed()
+        sut.zeroWasPressed()
+        sut.zeroWasPressed()
+        sut.zeroWasPressed()
+        
+        sut.multiplyWasPressed()
+        
+        sut.pointWasPressed()
+        sut.zeroWasPressed()
+        sut.threeWasPressed()
+        
+        // Then.
+        XCTAssertEqual(delegate.resultUpdatedStack.last?.formattedString, "0.03")
+    }
 
 }

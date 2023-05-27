@@ -38,23 +38,23 @@ final class KeyInputControllerTests: XCTestCase {
         let keyCommand = UIKeyCommand(input: "1",
                                       modifierFlags: [],
                                       action: #selector(keyPressed(_:)))
-        
+
         // When
         sut.keyPressed(keyCommand)
-        
+
         // Then
         XCTAssertTrue(keyInput.onKeyPressWasCalled)
     }
-    
+
     func testKeysAndKeyCommandsAreSameSize() throws {
         // Given
-        let keys = sut.keys
+        let keys = KeyConstants.keys
         let keyCommands = sut.keyCommands
-        
+
         // Then
         XCTAssertEqual(keys.count, keyCommands?.count)
     }
-    
+
     @objc private func keyPressed(_ sender: UIKeyCommand) { }
 
 }
